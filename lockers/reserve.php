@@ -1,9 +1,19 @@
 <html>
 <head>
   <title>ロッカー予約</title>
+  <link rel="stylesheet" type="text/css" href="../style.css">
 </head>
 <body>
-  <h1>ロッカー予約ページ</h1>
+  <header>
+    <ul>
+      <li><span>LockerRV</span></li>
+      <!-- <li style="margin-left: 900px;">使い方：</li>
+      <li>1.予約したいロッカーをクリック</li>
+      <li>index</li> -->
+    </ul>
+  </header>
+  <h4>ロッカー予約ページ</h4>
+  <div style="margin-top: 80px; text-align: center;">
 
 <?php
 require_once '../db_config.php';
@@ -45,10 +55,11 @@ try {
             <?php
             foreach($result2 as $record){?>
               <option value="<?php echo htmlspecialchars($record['id'], ENT_QUOTES, 'UTF-8'); ?>"><?php echo htmlspecialchars($record['first_name'], ENT_QUOTES, 'UTF-8') . htmlspecialchars($record['last_name'], ENT_QUOTES, 'UTF-8'); ?></option>
-      <?php } ?>
+      <?php }?>
             </select><br>
     <input type='submit' value='送信'>
   </form>
-    <?php echo "<a href=detail.php?id=" .htmlspecialchars($id,ENT_QUOTES,'UTF-8') . ">ロッカー詳細に戻る</a>";?>
+    <?php echo "<a href=detail.php?id="  . htmlspecialchars($id,ENT_QUOTES,'UTF-8') . ">ロッカー詳細に戻る</a>";?>
+  </div>
 </body>
 </html>

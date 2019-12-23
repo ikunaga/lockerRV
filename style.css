@@ -1,0 +1,68 @@
+
+/*全体*/
+.clearfix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+body {
+  padding-bottom: 200px;
+}
+
+header {
+	width: 100%;
+	height: 60px;
+	padding-top: 0;
+	margin-top: 0;
+	position: absolute;
+  border-bottom: solid #d2691e;
+  background-color: white;
+	top: 0;
+	position: fixed;
+  color: #d2691e;
+}
+
+footer {
+	width: 100%;
+	height: 60px;
+  background-color: gray;
+  position: absolute;
+	bottom: 0;
+}
+
+li {
+  float: left;
+  margin-left: 30px;
+}
+
+ul {
+list-style: none;
+}
+
+span {
+  font-size: 25px;
+}
+
+a {
+  color: #d2691e;
+}
+
+
+/*locker/index*/
+
+.table1 {
+	margin: 0 auto;
+	width: 80%;
+	text-align: center;
+  border-collapse: collapse;
+  border: solid 1px orange;
+}
+
+.table1 td:hover {
+  background-color: #fffacd;
+}
+
+.search_form {
+  float: left;
+}
