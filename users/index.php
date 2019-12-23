@@ -2,8 +2,15 @@
 <html lang="ja">
   <head>
     <title>ユーザー一覧</title>
+    <link rel="stylesheet" type="text/css" href="../style.css">
   </head>
   <body>
+      <header>
+      <ul>
+        <li><a href="../index.php" style="text-decoration: none;"><span>LockerRV</span></a>　(ロッカー予約管理システム)</li>
+        <li style="margin-left: 850px"><a href="../admin.php" style="text-decoration: none;"><h2 style="color: #6495ed;">[ 管理者用ページ ]</h2></a></li>
+      </ul>
+    </header>
     <h1>ユーザー一覧</h1>
     <div style="width: 500px; background-color: #ffffe0; border: orange, solid, 10px;">
 
@@ -51,6 +58,7 @@
     ?>
 
     </div>
+    <footer></footer>
 
   </body>
 </html>

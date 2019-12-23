@@ -6,14 +6,11 @@
 <body>
   <header>
     <ul>
-      <li><span>LockerRV</span></li>
-      <!-- <li style="margin-left: 900px;">使い方：</li>
-      <li>1.予約したいロッカーをクリック</li>
-      <li>index</li> -->
+      <li><a href="../index.php" style="text-decoration: none;"><span>LockerRV</span></a>　(ロッカー予約管理システム)</li>
     </ul>
   </header>
-  <h4>ロッカー予約ページ</h4>
   <div style="margin-top: 80px; text-align: center;">
+      <h4>ロッカー予約</h4>
 
 <?php
 require_once '../db_config.php';
@@ -38,7 +35,7 @@ try {
   $result = $stmt->fetch(PDO::FETCH_ASSOC);
   $result2 = $stmt2->fetchAll(PDO::FETCH_ASSOC);
   //echoで表示内容を指定
-  echo "ロッカー番号:" . htmlspecialchars($result['line'], ENT_QUOTES,'UTF-8') . "-" . htmlspecialchars($result['step'], ENT_QUOTES,'UTF-8') . "<br>\n";
+  echo "【 ロッカー番号:" . htmlspecialchars($result['line'], ENT_QUOTES,'UTF-8') . "-" . htmlspecialchars($result['step'], ENT_QUOTES,'UTF-8') . " 】" . "<br>\n";
   $dbh = null;
 
 } catch (Exception $e) {
@@ -57,9 +54,18 @@ try {
               <option value="<?php echo htmlspecialchars($record['id'], ENT_QUOTES, 'UTF-8'); ?>"><?php echo htmlspecialchars($record['first_name'], ENT_QUOTES, 'UTF-8') . htmlspecialchars($record['last_name'], ENT_QUOTES, 'UTF-8'); ?></option>
       <?php }?>
             </select><br>
-    <input type='submit' value='送信'>
+    <input type='submit' value='申請する'>
   </form>
-    <?php echo "<a href=detail.php?id="  . htmlspecialchars($id,ENT_QUOTES,'UTF-8') . ">ロッカー詳細に戻る</a>";?>
+    <?php echo "<a href=detail.php?id="  . htmlspecialchars($id,ENT_QUOTES,'UTF-8') . ">ロッカー詳細に戻る</a>" . "<br>";?>
+    <?php echo "<a href=../index.php>ロッカー一覧に戻る</a>";?>
   </div>
+  <footer>
+    <ul style="padding-top: 8px;">
+      <li style="margin-left: 500px;">[ 予約手順 ]</li>
+      <li>1.予約したいロッカーをクリック</li>
+      <li>2.詳細ページで予約するをクリック</li>
+      <li>3.予約ページで期間を入力してOKをクリック</li>
+    </ul>
+  </footer>
 </body>
 </html>

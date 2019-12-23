@@ -7,14 +7,14 @@
 <body>
   <header>
     <ul>
-      <li><span>LockerRV</span></li>
+      <li><a href="../index.php" style="text-decoration: none;"><span>LockerRV</span></a>　(ロッカー予約管理システム)</li>
       <!-- <li style="margin-left: 900px;">使い方：</li>
       <li>1.予約したいロッカーをクリック</li>
       <li>index</li> -->
     </ul>
   </header>
   <div style="margin-top: 80px; text-align: center;">
-  <h4>ロッカー詳細ページ</h4>
+  <h4>ロッカー詳細</h4>
     <?php
     require_once '../db_config.php';
     try {
@@ -57,7 +57,7 @@
 
       echo "現在の時刻：" . date("Y/m/d H:i:s") . "<br>";
       //echoで表示内容を指定（ロッカー番号）
-      echo "ロッカー番号：" . htmlspecialchars($result3[0]['line'], ENT_QUOTES,'UTF-8') . "-" . htmlspecialchars($result3[0]['step'], ENT_QUOTES,'UTF-8') . "<br>\n";
+      echo "【 ロッカー番号：" . htmlspecialchars($result3[0]['line'], ENT_QUOTES,'UTF-8') . "-" . htmlspecialchars($result3[0]['step'], ENT_QUOTES,'UTF-8') ." 】" . "<br>\n";
       $dbh = null;
 
       if (empty($result2)) {
@@ -70,7 +70,7 @@
 
     ?>
     <div style="text-align: center;">
-      <table style="text-align: center;">
+      <table align="center">
         <tr>
           <th>申請者</th><th>開始日時</th><th>終了日時</th><th>承認状況</th>
         </tr>
@@ -94,8 +94,17 @@
       }
     ?>
       <br>
-      <a href=reserve.php?id=<?php echo  htmlspecialchars($id,ENT_QUOTES,'UTF-8') ?>>このロッカーを予約する</a>
+      <a href=reserve.php?id=<?php echo  htmlspecialchars($id,ENT_QUOTES,'UTF-8') ?>>このロッカーを予約する</a><br>
+      <a href=../index.php>ロッカー一覧に戻る</a>
   </div>
+  <footer>
+    <ul style="padding-top: 8px;">
+      <li style="margin-left: 500px;">[ 予約手順 ]</li>
+      <li>1.予約したいロッカーをクリック</li>
+      <li>2.詳細ページで予約するをクリック</li>
+      <li>3.予約ページで期間を入力してOKをクリック</li>
+    </ul>
+  </footer>
 
 </body>
 </html>

@@ -1,3 +1,18 @@
+
+<html>
+<head>
+  <title>ユーザー編集</title>
+  <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+  <header>
+      <ul>
+        <li><a href="../index.php" style="text-decoration: none;"><span>LockerRV</span></a>　(ロッカー予約管理システム)</li>
+        <li style="margin-left: 850px"><a href="../admin.php" style="text-decoration: none;"><h2 style="color: #6495ed;">[ 管理者用ページ ]</h2></a></li>
+      </ul>
+  </header>
+<div style="margin-top: 80px; text-align: center;">
+    <h4>ユーザー編集ページ</h4>
 <?php
 require_once '../db_config.php';
 try {
@@ -18,15 +33,6 @@ try {
 }
 ?>
 
-
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <title>ユーザー編集</title>
-</head>
-<body>
-  <h1>ユーザー編集画面</h1>
   <form method="post" action="update.php">
     <input type="hidden" name="id" value="<?php echo htmlspecialchars($result['id'], ENT_QUOTES, 'UTF-8'); ?>">
     性：<input type="text" name="first_name" value="<?php echo htmlspecialchars($result['first_name'], ENT_QUOTES, 'UTF-8'); ?>"><br>
@@ -35,5 +41,7 @@ try {
 
     <input type="submit" value="更新">
   </form>
+</div>
+<footer></footer>
 </body>
 </html>

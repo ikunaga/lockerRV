@@ -7,10 +7,7 @@
 <body>
   <header>
     <ul>
-      <li><span>LockerRV</span></li>
-      <!-- <li style="margin-left: 900px;">使い方：</li>
-      <li>1.予約したいロッカーをクリック</li>
-      <li>index</li> -->
+      <li><a href="index.php" style="text-decoration: none;"><span>LockerRV</span></a>　(ロッカー予約管理システム)</li>
     </ul>
   </header>
   <div class="clearfix" style="margin-top: 80px;">
@@ -215,6 +212,7 @@
 
 <!-- 以下検索結果表示 -->
   <div style="margin-left: 200px; margin-top: 50px;">
+    <h4 style="border-bottom: double #dc143c; color: #dc143c; width: 70px;">Search</h4>
       <!-- 位置検索結果 -->
       <div class="search_form">
       <?php
@@ -265,5 +263,13 @@
            </form>
       </div>
   </div>
+  <footer>
+    <ul style="padding-top: 8px;">
+      <li style="margin-left: 500px;">[ 予約手順 ]</li>
+      <li>1.予約したいロッカーをクリック</li>
+      <li>2.詳細ページで予約するをクリック</li>
+      <li>3.予約ページで期間を入力してOKをクリック</li>
+    </ul>
+  </footer>
 </body>
 </html>

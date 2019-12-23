@@ -26,10 +26,13 @@ header {
 footer {
 	width: 100%;
 	height: 60px;
-  background-color: gray;
+  border-top: solid #d2691e;
+  background-color: white;
   position: absolute;
 	bottom: 0;
+  color: #d2691e;
 }
+
 
 li {
   float: left;
@@ -37,7 +40,8 @@ li {
 }
 
 ul {
-list-style: none;
+  list-style: none;
+  font-size: 12px;
 }
 
 span {
