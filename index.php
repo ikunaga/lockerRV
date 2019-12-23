@@ -10,7 +10,7 @@
       <li><a href="index.php" style="text-decoration: none;"><span>LockerRV</span></a>　(ロッカー予約管理システム)</li>
     </ul>
   </header>
-  <div class="clearfix" style="margin-top: 80px;">
+  <div class="clearfix" style="margin-top: 80px; background-image: url(images/images.jpeg); background-size: cover; background-position: bottom;">
         <h4 style="padding-left: 50px;">ロッカー一覧</h4>
 
           <?php
