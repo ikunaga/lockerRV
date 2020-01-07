@@ -6,12 +6,7 @@
 <body>
   <div id="wrapper"  style="margin-top: 50px; text-align: center;">
     <h4>処理結果（承認・否決）</h4>
-    <header>
-        <ul>
-          <li><a href="../index.php" style="text-decoration: none;"><span>LockerRV</span></a>　(ロッカー予約管理システム)</li>
-          <li style="margin-left: 700px"><a href="../admin.php" style="text-decoration: none;"><h2 style="color: #6495ed;">[ 管理者用ページ ]</h2></a></li>
-        </ul>
-    </header>
+    <?php include_once("../template/adheader.tpl"); ?>
 
     <?php
     require_once '../db_config.php';

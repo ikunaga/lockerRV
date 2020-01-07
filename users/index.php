@@ -5,26 +5,19 @@
     <link rel="stylesheet" type="text/css" href="../style.css">
   </head>
   <body>
-      <header>
-      <ul>
-        <li><a href="../index.php" style="text-decoration: none;"><span>LockerRV</span></a>　(ロッカー予約管理システム)</li>
-        <li style="margin-left: 700px"><a href="../admin.php" style="text-decoration: none;"><h2 style="color: #6495ed;">[ 管理者用ページ ]</h2></a></li>
-      </ul>
-    </header>
+    <?php include_once("../template/adheader.tpl"); ?>
     <div style="text-align: center; margin-top: 80px;">
       <h4>ユーザー一覧</h4>
       <?php
       require_once '../db_config.php';
 
       try {
-        //データベースとの操作を入力(1~10)
-        $sql = "SELECT * FROM users";
-        $stmt = $dbh->query($sql);
-        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        //ユーザー一覧の取り出し
+        $result = getUsrAll($dbh);
 
-        echo "<table align=center>\n";
-        echo "<tr>\n";
-        echo "<th>性</th><th>名</th><th>メールアドレス</th>\n";
+        echo "<table class='table2' align=center border=1>\n";
+        echo "<tr style='background-color: #ffebcd;'>\n";
+        echo "<th>性</th><th>名</th><th>メールアドレス</th><th>各種設定</th>\n";
         echo "</tr>\n";
         foreach ($result as $row) {
           echo "<tr>\n";
@@ -48,6 +41,6 @@
       }
       ?>
     </div>
-    <footer style="position: absolute;"></footer>
+    <footer></footer>
   </body>
 </html>

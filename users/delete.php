@@ -12,18 +12,15 @@
           <li style="margin-left: 700px"><a href="../admin.php" style="text-decoration: none;"><h2 style="color: #6495ed;">[ 管理者用ページ ]</h2></a></li>
         </ul>
     </header>
-    
+
     <?php
     require_once '../db_config.php';
 
     try {
       if (empty($_GET['id'])) throw new Exception('ID不正');
       $id = (int) $_GET['id'];
-      //SQL１「ユーザー削除」
-      $sql = "DELETE FROM users WHERE id = ?";
-      $stmt = $dbh->prepare($sql);
-      $stmt->bindValue(1, $id, PDO::PARAM_INT);
-      $stmt->execute();
+      //ユーザー削除
+      deleteUsr($dbh, $id);
       $dbh = null;
 
       echo "ID:" . htmlspecialchars($id, ENT_QUOTES, 'UTF-8') . "ユーザーを削除しました。<br>";
